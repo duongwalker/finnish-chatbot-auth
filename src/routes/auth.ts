@@ -5,6 +5,12 @@ import { generateToken } from "../utils/jwt";
 
 const router = Router();
 
+// Health check route
+router.get("/", (req: Request, res: Response) => {
+  res.send("✅ Finnish Chatbot Auth Server is running!");
+});
+
+
 // Signup
 router.post("/signup", async (req: Request, res: Response): Promise<any> => {
   const { email, password } = req.body;
